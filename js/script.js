@@ -30,6 +30,8 @@
     });
   }
 
+  closeMenu();
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (event) => {
       const targetId = anchor.getAttribute("href");
@@ -159,6 +161,9 @@
   });
 
   window.addEventListener("scroll", setHeaderState, { passive: true });
-  window.addEventListener("resize", refreshFaqHeight);
+  window.addEventListener("resize", () => {
+    refreshFaqHeight();
+    if (window.innerWidth > 960) closeMenu();
+  });
   setHeaderState();
 })();
