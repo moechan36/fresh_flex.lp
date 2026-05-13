@@ -7,7 +7,7 @@
   const sliders = document.querySelectorAll("[data-sns-slider]");
   const videos = document.querySelectorAll(".video-link video");
   const phoneLinks = document.querySelectorAll("[data-tel-link]");
-  const directLinks = document.querySelectorAll(".header-official, .footer-official, .map-link, .video-link, .sns-more-account");
+  const directLinks = document.querySelectorAll(".header-official, .footer-official, .map-link, .video-link, .instagram-card-link, .sns-more-account");
 
   const setHeaderState = () => {
     if (!header) return;
