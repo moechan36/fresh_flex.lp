@@ -329,6 +329,11 @@ body.menu-open .site-header {
   line-break: strict;
 }
 
+.hero-nowrap {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .hero__lead {
   margin: 22px 0 24px;
   max-width: 680px;
@@ -2295,7 +2300,7 @@ body.menu-open .site-header {
   }
 
   .hero h1 {
-    font-size: clamp(2.1rem, 9.5vw, 2.65rem);
+    font-size: clamp(1.95rem, 8.8vw, 2.55rem);
     line-height: 1.22;
   }
 
@@ -2592,7 +2597,7 @@ body.menu-open .site-header {
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 9vw, 2.32rem);
+    font-size: clamp(1.9rem, 8.4vw, 2.22rem);
   }
 
   .hero__visual,
