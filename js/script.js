@@ -7,7 +7,15 @@
   const sliders = document.querySelectorAll("[data-sns-slider]");
   const videos = document.querySelectorAll(".video-link video");
   const phoneLinks = document.querySelectorAll("[data-tel-link]");
-  const directLinks = document.querySelectorAll(".header-official, .footer-official, .map-link, .video-link, .instagram-card-link, .sns-more-account");
+  const directLinks = document.querySelectorAll(".header-official, .footer-official, .map-link, .video-link, .sns-more-account");
+
+  const processInstagramEmbeds = () => {
+    if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === "function") {
+      window.instgrm.Embeds.process();
+    }
+  };
+
+  window.processInstagramEmbeds = processInstagramEmbeds;
 
   const setHeaderState = () => {
     if (!header) return;
@@ -126,8 +134,14 @@
       });
     };
 
-    prev.addEventListener("click", () => slideByCard(-1));
-    next.addEventListener("click", () => slideByCard(1));
+    prev.addEventListener("click", () => {
+      slideByCard(-1);
+      window.setTimeout(processInstagramEmbeds, 320);
+    });
+    next.addEventListener("click", () => {
+      slideByCard(1);
+      window.setTimeout(processInstagramEmbeds, 320);
+    });
   });
 
   videos.forEach((video) => {
@@ -164,6 +178,10 @@
   window.addEventListener("resize", () => {
     refreshFaqHeight();
     if (window.innerWidth > 960) closeMenu();
+    processInstagramEmbeds();
   });
+  window.addEventListener("load", processInstagramEmbeds);
+  window.setTimeout(processInstagramEmbeds, 500);
+  window.setTimeout(processInstagramEmbeds, 1500);
   setHeaderState();
 })();
