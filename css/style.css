@@ -1008,6 +1008,10 @@ body.menu-open .site-header {
   margin-top: auto;
 }
 
+.product-sub-action {
+  margin-top: 24px;
+}
+
 .product-card--pure {
   border-color: rgba(11,103,216,0.34);
 }
@@ -1488,21 +1492,12 @@ body.menu-open .site-header {
   pointer-events: none;
 }
 
+.sns-more-action {
+  margin-top: 24px;
+}
+
 .sns-more-account {
-  position: absolute;
-  z-index: 3;
-  right: 0;
-  bottom: 0;
-  display: inline-flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(11,103,216,0.92);
-  color: #fff !important;
-  font-size: 0.82rem !important;
-  font-weight: 800;
-  box-shadow: 0 14px 30px rgba(0,0,0,0.36);
+  min-width: 260px;
 }
 
 .slider-btn {
